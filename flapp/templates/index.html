@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Mon CV</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="{{ url_for('static',filename= 'vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet">
+  <link href= "{{ url_for('static',filename= 'vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href= "{{ url_for('static',filename= 'css/resume.min.css')}}" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+    <a class="navbar-brand js-scroll-trigger" href="#page-top">
+      <span class="d-block d-lg-none">{{data.name}}</span>
+      <span class="d-none d-lg-block">
+        <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="{{ url_for('static',filename= 'img/profile.jpg')}}" alt="">
+      </span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#about">Contact</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#experience">Expériences</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#education">Formations</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#skills">Compétences</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#interests">Interêts et autres.</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container-fluid p-0">
+
+    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="about">
+      <div class="w-100">
+        <h1 class="mb-0">{{data.Nom_famille}}
+          <span class="text-primary">{{data.Prénom}}</span>
+        </h1>
+        <div class="subheading mb-5">{{data.Adresse}} · {{data.Tel}}·
+          <a href="mailto:name@email.com">{{data.Mail}}</a>
+        </div>
+        <p class="lead mb-5"> {{presentation.Présentation}} </p>
+        <div class="social-icons">
+          <a href="#">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <hr class="m-0">
+
+    <section class="resume-section p-3 p-lg-5 d-flex justify-content-center" id="experience">
+      <div class="w-100">
+        <h2 class="mb-5">Expériences</h2>
+
+        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+          <div class="resume-content">
+            <h3 class="mb-0"> {{experiences.Expérience_1}} </h3>
+            <div class="subheading mb-3"> {{experiences.Entreprise_1}} </div>
+            <p> {{experiences.Détail_1}} </p>
+          </div>
+          <div class="resume-date text-md-right">
+            <span class="text-primary"> {{experiences.Date_1}} </span>
+          </div>
+        </div>
+
+        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+          <div class="resume-content">
+            <h3 class="mb-0"> {{experiences.Expérience_2}}</h3>
+            <div class="subheading mb-3">{{experiences.Entreprise_2}}</div>
+            <p>{{experiences.Détail_2}}</p>
+          </div>
+          <div class="resume-date text-md-right">
+            <span class="text-primary">{{experiences.Date_2}}</span>
+          </div>
+        </div>
+
+        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+          <div class="resume-content">
+            <h3 class="mb-0">{{experiences.Expérience_3}}</h3>
+            <div class="subheading mb-3">{{experiences.Entreprise_3}}</div>
+            <p>{{experiences.Détail_3}}</p>
+          </div>
+          <div class="resume-date text-md-right">
+            <span class="text-primary">{{experiences.Dateç3}}</span>
+          </div>
+        </div>
+
+        <div class="resume-item d-flex flex-column flex-md-row justify-content-between">
+          <div class="resume-content">
+            <h3 class="mb-0">{{experiences.Expérience_4}}</h3>
+            <div class="subheading mb-3">{{experiences.Entreprise_4}}</div>
+            <p>{{experiences.Détail_4}}</p>
+          </div>
+          <div class="resume-date text-md-right">
+            <span class="text-primary">{{experiences.Date_4}}</span>
+          </div>
+        </div>
+
+        <div class="resume-item d-flex flex-column flex-md-row justify-content-between">
+           <div class="resume-content">
+              <h3 class="mb-0">{{experiences.Expérience_5}}</h3>
+              <div class="subheading mb-3">{{experiences.Entreprise_5}}</div>
+              <p>{{experiences.Détail_5}}</p>
+            </div>
+            <div class="resume-date text-md-right">
+              <span class="text-primary">{{experiences.Date_5}}</span>
+            </div>
+        </div>
+      </div>
+
+    </section>
+
+    <hr class="m-0">
+
+    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="education">
+      <div class="w-100">
+        <h2 class="mb-5">Formations</h2>
+
+        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+            <div class="resume-content">
+              <h3 class="mb-0">{{formations.Formation_1}}</h3>
+              <div class="subheading mb-3"> {{formations.Certificat_1}} </div>
+              <div> {{formations.Intitulé_1}} </div>
+            </div>
+            <div class="resume-date text-md-right">
+              <span class="text-primary"> {{formations.Année_1}}</span>
+            </div>
+          </div>
+
+        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+            <div class="resume-content">
+              <h3 class="mb-0">{{formations.Formation_2}}</h3>
+              <div class="subheading mb-3"> {{formations.Certificat_2}} </div>
+              <div> {{formations.Intitulé_2}} </div>
+            </div>
+            <div class="resume-date text-md-right">
+              <span class="text-primary"> {{formations.Année_2}}</span>
+            </div>
+        </div>
+
+        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+          <div class="resume-content">
+            <h3 class="mb-0">{{formations.Université}}</h3>
+            <div class="subheading mb-3"> {{formations.Diplôme}} </div>
+            <div> {{formations.Intitulé_3}} </div>
+          </div>
+          <div class="resume-date text-md-right">
+            <span class="text-primary"> {{formations.Année_3}}</span>
+          </div>
+        </div>
+
+        <div class="resume-item d-flex flex-column flex-md-row justify-content-between">
+          <div class="resume-content">
+            <h3 class="mb-0"> {{formations.Lycée}} </h3>
+            <div class="subheading mb-3"> {{formations.Bac}} </div>
+            <p>{{formations.Spécialité}} </p>
+          </div>
+          <div class="resume-date text-md-right">
+            <span class="text-primary">{{formations.Année_4}} </span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <hr class="m-0">
+
+    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="skills">
+      <div class="w-100">
+        <h2 class="mb-5">Compétences</h2>
+
+        <div class="subheading mb-3">Programmation et languages </div>
+        <ul class="list-inline dev-icons">
+          <li class="list-inline-item">
+            <i class= "fab fa-html5"></i>
+          </li>
+          <li class="list-inline-item">
+            <i class="fab fa-css3-alt"></i>
+          </li>
+          <li class="list-inline-item">
+            <i class="fab fa-python" ></i>
+          </li>
+          <li class="list-inline-item">
+            <i class= "fab fa-r-project"></i>
+          </li>
+          <li class="list-inline-item">
+            <i class= "fab fa-swift"></i>
+          </li>
+          <li class="list-inline-item">
+            <i class= "fab fa-node-js"></i>
+          </li>
+          <li class="list-inline-item">
+            <i class= ""></i>
+          </li>
+          <li class="list-inline-item">
+            <i class=""></i>
+          </li>
+          <li class="list-inline-item">
+            <i class=""></i>
+          </li>
+          <li class="list-inline-item">
+            <i class=""></i>
+          </li>
+          <li class="list-inline-item">
+            <i class=""></i>
+          </li>
+          <li class="list-inline-item">
+            <i class=""></i>
+          </li>
+        </ul>
+
+        <div class="subheading mb-3">Workflow</div>
+        <ul class="fa-ul mb-0">
+          <li>
+            <i class="fa-li fa fa-check"></i>
+            {{workflow.w_1}} </li>
+          <li>
+            <i class="fa-li fa fa-check"></i>
+            {{workflow.w_2}} </li>
+          <li>
+            <i class="fa-li fa fa-check"></i>
+            {{workflow.w_3}} </li>
+          <li>
+            <i class="fa-li fa fa-check"></i>
+            {{workflow.w_4}} </li>
+        </ul>
+      </div>
+    </section>
+
+    <hr class="m-0">
+
+    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="interests">
+      <div class="w-100">
+        <h2 class="mb-5">Interêts</h2>
+        <li><i class="fa-li fa fa-check"></i>
+        {{interets.Loisir_1}} </li>
+        <li><i class="fa-li fa fa-check"></i>
+            {{interets.Loisir_2}} </li>
+        <h2 class="mb-5">Langues</h2>
+        <li><i class="fa-li fa fa-check"></i>
+        {{interets.Langue_1}} </li>
+        <li><i class="fa-li fa fa-check"></i>
+            {{interets.Langue_2}} </li>
+        <h2 class="mb-5">Permis</h2>
+        <li><i class="fa-li fa fa-check"></i>
+        {{interets.Permis}} </li>
+      </div>
+    </section>
+
+    <hr class="m-0">
+
+    
+
+  </div>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="{{ url_for('static',filename= 'vendor/jquery/jquery.min.js')}}"></script>
+  <script src="{{ url_for('static',filename= 'vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="{{ url_for('static',filename= 'vvendor/jquery-easing/jquery.easing.min.js')}}"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="{{ url_for('static',filename= 'js/resume.min.js')}}"></script>
+
+</body>
+
+</html>
